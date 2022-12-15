@@ -3,9 +3,11 @@ const bookmarkRoute = require("./src/bookmark/bookmark.router");
 const connect = require("./src/config/db");
 const shoppingRoute = require("./src/shopping/shopping.router");
 require("dotenv").config();
+const cors=require("cors");
 
 const app = express();
 app.use(express.json());
+app.use(cors);
 
 app.use("/shoppingDetailsApi",shoppingRoute);
 app.use("/bookmark",bookmarkRoute);
