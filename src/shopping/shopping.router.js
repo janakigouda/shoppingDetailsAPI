@@ -14,6 +14,15 @@ shoppingRoute.post("/",async(req,res)=>{
     }
 })
 
+shoppingRoute.get("/:id",async(req,res)=>{
+    try{
+        let shoppingData=await ShoppingDetails.findById(req.params.id);
+        res.send(shoppingData)
+    }catch(e){
+        res.status(500).send(e.message);
+    }
+})
+
 shoppingRoute.get("/getDetails",async(req,res)=>{
     try{
         let shoppingData=await ShoppingDetails.find();
