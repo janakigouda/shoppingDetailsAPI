@@ -14,7 +14,7 @@ shoppingRoute.post("/",async(req,res)=>{
     }
 })
 
-shoppingRoute.get("/:id",async(req,res)=>{
+shoppingRoute.get("/getDetails/:id",async(req,res)=>{
     try{
         let shoppingData=await ShoppingDetails.findById(req.params.id);
         res.send(shoppingData)
